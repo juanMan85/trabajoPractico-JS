@@ -1,10 +1,10 @@
-//simulacion carrito supermercado usando objetos
+//simulacion carrito de super
 
 let costoTotal=0;
 let productoIngresado;
 
 
-class productoTienda{
+class producto{
     constructor( nombre , precio , codigo, tipo){  
 
          this.nombre = nombre;
@@ -26,13 +26,20 @@ class productoTienda{
     }
  
 }
-                                                    
+
+//---------ARRAY --------------
+
+
+let productos=[ 
+    harina = new producto( "harina" , 65,1, "almacen"),
+    leche = new producto("leche", 85, 2, "lacteos"),
+    mermelada = new producto("mermelada", 92, 3,"almacen"),
+    galletitas = new producto("galletitas", 88, 4,"almacen"),
+    queso = new producto("queso", 230, 5,"lacteos"),
+]
                
-let harina = new productoTienda( "harina" , 65,1, "almacen"); //  -->  objeto producto(nombre,precio,codigo,tipo)
-let leche = new productoTienda("leche", 85, 2, "lacteos");
-let mermelada = new productoTienda("mermelada", 92, 3,"almacen");
-let galletitas = new productoTienda("galletitas", 88, 4,"almacen");
-let queso = new productoTienda("queso", 230, 5,"lacteos");
+
+
 
 
  function devolverPrecio(codigo) {    
@@ -78,7 +85,7 @@ while (productoIngresado != 0) {
    if(productoIngresado>0 && productoIngresado<=5) {  
         cantidadProducto=parseInt(prompt("cantidad de unidades?"))
         costoTotal=costoTotal+devolverPrecio(productoIngresado)*cantidadProducto; 
-        console.log(mostrarDetalle(productoIngresado)); //problemas Undefined ??
+        mostrarDetalle(productoIngresado); //
         console.log("unidades : "+cantidadProducto); 
       
 
