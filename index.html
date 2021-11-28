@@ -8,8 +8,28 @@
     <title>proyectoJavaScript</title>
 </head>
 <body>
-    <h1>Simulador interactivo</h1>
-    <h2>trabajo practico </h2>
-    <script src="scripts/app.js"></script>
+    <header>
+        <h1 class="titulo">Almacen</h1>
+    </header>
+    <main>
+      <div>
+        <h4>cod: 1-----------harina----------- $65</h4>
+        <h4>cod: 2-----------leche------------ $85</h4>
+        <h4>cod: 3-----------mermelada-------- $92</h4>
+        <h4>cod: 4-----------galletitas------- $88</h4>
+        <h4>cod: 5-----------queso----------- $230</h4>
+      </div>
+      <div id="contenedor">
+        <p>producto</p>
+        <input class=IngresoDatos type="text" placeholder="producto" id="busquedaUsuario">     <!-- ingreso de producto      -->
+        <p>cantidad</p>
+        <input class=IngresoDatos type="text" placeholder="cantidad" id="cantidadUsuario">     <!-- cantidad de ese producto -->
+        <button class="botonBuscar" onclick="ingresoUsuario()">Agregar-al-carrito</button>
+        <button class="botonTerminar" onclick="terminarCompra()">terminar-Compra</button>
+        <div id="mensaje"></div>
+      </div>    
+    </main>
+    
+    <script src="scripts/appDom.js"></script>
 </body>
 </html>
