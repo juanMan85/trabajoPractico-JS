@@ -14,7 +14,7 @@ class producto{
     }
      
     infoProducto(){
- 
+
          console.log("nombre producto: " +this.nombre);
          console.log("precio: "+ this.precio);
          console.log("codigo: " + this.codigo);
@@ -37,6 +37,8 @@ let productos=[
     galletitas = new producto("galletitas", 88, 4,"almacen"),
     queso = new producto("queso", 230, 5,"lacteos"),
 ]
+
+
                
 
  function devolverPrecio(codigo) {    
@@ -54,9 +56,14 @@ let productos=[
     else if(codigo==3 || codigo=="mermelada"){return mermelada.infoProducto()}
     else if(codigo==4 || codigo=="galletitas"){return galletitas.infoProducto()}
     else if(codigo==5 || codigo=="queso"){return queso.infoProducto()}  
-} 
+}
 
 
+
+//----------
+harina= document.getElementById("harina");
+
+console.log(harina.value)
 
 //-------------comienzo de programa------
 //cargas por usuario
@@ -96,13 +103,13 @@ class productoCarrito{
         this.cant=cantidadIngresada;
         this.valor=cantidadIngresada*precio;
     }  
-};
+};  
 
 //----------terminar compra-----
 function terminarCompra(){
     
     let carritoFinal=JSON.parse(localStorage.getItem("claveCarrito"))//trae array de la memoria local
-    console.log(carritoFinal);                             //chequeo
+    console.log(carritoFinal);                             //chequeo 
     console.log(typeof(carritoFinal))                      //chequeo 
         
     let precioFinal=0;
@@ -129,8 +136,6 @@ function terminarCompra(){
     let parrafo=document.createElement("h3")                        //crea nodo suelto
     parrafo.innerHTML = "el precio final es: "+precioFinal ;        //propiedad de nodo innerHTML 
     mensaje.appendChild(parrafo)                                    //engancha el nodo suelto <p> al <div> con id: "mensaje" ----muestra al usuario en pantalla
-
-    
 
 
    

@@ -6,14 +6,19 @@ h1{
     background-color: rgb(120, 107, 133);
     text-align: center;
 }
-h4{
-    text-align: center;
-    size: 15px;
-}
-h5{
-    
-    color: green;
-}
+
+
 h3{
     color: blue;
 }
+
+.main{
+    display: flex;
+    justify-content: space-around;
+}
+
+.divBoton{
+    display: flex;
+    justify-content: center;
+}
+
