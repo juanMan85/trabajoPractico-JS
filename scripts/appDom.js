@@ -41,7 +41,7 @@ let productos=[
 
                
 
- function devolverPrecio(codigo) {    
+/*  function devolverPrecio(codigo) {    
     if(codigo==1 || codigo=="harina"){return harina.traerPrecio()}        
      else if(codigo==2 || codigo=="leche"){return leche.traerPrecio()}     
      else if(codigo==3 || codigo=="mermelada"){return mermelada.traerPrecio()}     
@@ -57,7 +57,7 @@ let productos=[
     else if(codigo==4 || codigo=="galletitas"){return galletitas.infoProducto()}
     else if(codigo==5 || codigo=="queso"){return queso.infoProducto()}  
 }
-
+ */
 
 
 //----------

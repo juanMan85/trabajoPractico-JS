@@ -34,7 +34,12 @@ let productos=[
     harina = new producto( "harina" , 80,1, "almacen"),
     leche = new producto("leche", 95, 2, "lacteos"),
     mantequilla = new producto("mantequilla", 350, 3,"almacen"),
-    miel = new producto("mile", 260, 4,"almacen"),
+    miel = new producto("miel", 260, 4,"almacen"),
+    cafe = new producto("cafe", 115, 5, "almacen"),
+    mermelada = new producto("mermelada", 105, 6, "almacen"),
+    manteca = new producto("manteca", 95, 7, "lacteos"),
+    aceite = new producto("aceite", 240, 8, "almacen"),
+    galletitas = new producto("galletitas", 130, 9, "almacen"),
 ]
                
 //-------------
@@ -62,11 +67,12 @@ let cantidad;
 function agregarCarrito(e) { 
     console.log(e.target)                              //me dice donde sucedio el evento click
     let hijo = e.target;                                //dato donde sucedio el evento lo almaceno en la variable hijo
-    let padre = hijo.parentNode.parentNode; 
-    let cantidadAgregada = e.target;                   
+    let padre = hijo.parentNode; 
+    let cantidadAgregada = e.target;     
+          
     
 
-    nombreProducto = padre.querySelector("h5"); //trae el contenido textual del titulo de la carta
+    nombreProducto = padre.querySelector(".h5"); //trae el contenido textual del titulo de la carta
     console.log("titulo: "+nombreProducto.textContent); 
     let precio = padre.querySelector(".precio"); 
   
@@ -125,7 +131,8 @@ function terminarCompra(){
 
 
          let ticket=document.createElement("h5")                     //crea nodo h5
-        ticket.innerHTML = `<p>producto: ${prodCarrito.prod}</p>   
+        ticket.innerHTML = `<p>producto: ${prodCarrito.prod}</p> 
+                            <p>precio: ${prodCarrito.valor}</p>  
                             <p>cantidad: ${prodCarrito.cant}</p>`;  
         mensaje.appendChild(ticket)                                //engancha el nodo en el div con id: "mensaje"
         
@@ -134,7 +141,7 @@ function terminarCompra(){
     console.log("el precio final: "+precioFinal)
 
   
-    let parrafo=document.createElement("h3")                        //crea nodo suelto
+    let parrafo=document.createElement("h4")                        //crea nodo suelto
     parrafo.innerHTML = "el precio final es: "+precioFinal ;        //propiedad de nodo innerHTML 
     mensaje.appendChild(parrafo)                                   //engancha el nodo suelto <p> al <div> con id: "mensaje" ----muestra al usuario en pantalla
 

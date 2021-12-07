@@ -1,24 +1,102 @@
-
-
-h1{
-    color: blue;
-    size: 30px;
-    background-color: rgb(120, 107, 133);
-    text-align: center;
+*{
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
-
-h3{
-    color: blue;
+.body{
+    background:#24A19C;
 }
+    .header{
+        background: #FFC996;
+        display: flex;
+        justify-content: center;
+        box-shadow:3px 3px 5px black;
+    }
+        .titulo{
+            font-size: 75px;
+            font-family: 'Corinthia', cursive;
+            font-style: italic;
+            color: #583D72;
+            font-weight: bolder;
+        }
+    .main{
+        background: #583D72;
+        box-shadow:3px 3px 5px black;
+    }
+        .gondola{
+            background:#FF8474;
+        }
+            .gondola-arriba{
+                background: #FFC996;
+                display: flex;
+                justify-content: space-around;
+            }
+            .gondola-medio{
+                background: #FFC996;
+                display: flex;
+                justify-content: space-around;
+            }
+            .gondola-abajo{
+                background:#FFC996;
+                display: flex;
+                justify-content: space-around;
+            }
+                .producto{
+                    background: #c9cccc79;
+                    width: 25%;
+                    border-radius: 10px;
+                    box-shadow: 3px 3px 5px black;
 
-.main{
-    display: flex;
-    justify-content: space-around;
+                    display: flex;
+                    flex-flow: column nowrap;
+                    
+                    
+                }
+                .producto:hover{
+                    box-shadow: none;
+                    border-left: 3px black solid;
+                    border-top:3px black solid;
+                }
+                   
+                    .img{
+                    
+                        border-radius: 20px;          
+                    }
+                    .h5{
+                        font-size: large;
+                        color: black;
+                    }
+                    .p{
+                        font-size: 20px;
+                        color: black;
+                    }
+                    .botonAlCarrito{
+                        width: 70%;
+                        background: #c5cecd27;
+                        box-shadow: 4px 4px 5px #22577E;
+                    }
+                    .botonAlCarrito:hover{
+                        border-top: #22577E solid;
+                        border-left: #22577E solid;
+                    }
+        .btn{
+            background: #583D72;
+            display: flex;
+            justify-content: center;
+            box-shadow: 3px 3px 5px black;
+        }
+        .btn:hover{
+            box-shadow: 1px 1px 3px black;
+            
+        }
+h5{
+    color: #F6F2D4;
+    font-size: medium;
 }
-
-.divBoton{
-    display: flex;
-    justify-content: center;
+h2{
+    color: #95D1CC;
 }
-
+h4{
+    color: #95D1CC;
+}
