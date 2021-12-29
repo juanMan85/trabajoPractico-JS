@@ -109,9 +109,7 @@ function agregarCarrito(e) {
      
 }
 
-//------------------------------
-// let terminar = document.getElementById("terminarCompra")  
-// terminar.addEventListener("click", terminarCompra)   
+
 
 
  $("#terminarCompra").on("click", terminarCompra)              // jQuery
@@ -142,13 +140,6 @@ function terminarCompra(){
         precioFinal=precioFinal+(prodCarrito.valor*prodCarrito.cant);                  //suma todos los productos del carrito
 
 
-        //  let ticket=document.createElement("h5")                     //crea nodo h5
-        // ticket.innerHTML = `<p>producto: ${prodCarrito.prod}</p> 
-        //                     <p>precio: ${prodCarrito.valor}</p>  
-        //                     <p>cantidad: ${prodCarrito.cant}</p>`;  
-        // mensaje.appendChild(ticket)                                //engancha el nodo en el div con id: "mensaje"
-        
-
 
         //----------JqUERY
         $("#mensaje").append(`<h3>producto: ${prodCarrito.prod}          
@@ -174,7 +165,23 @@ $(".botonAlCarrito").on("click", function(e){
         esteBoton.style.background ="green" ;
           
 })
-//----------------------------------------
 
 
+//-------------------animaciones jquery---------------------
+
+$(".titulo").on("mousemove", function(){
+
+    $(".titulo").slideUp(5000).delay(1000).slideDown(3000)
+})
+
+
+//-------------hover boton terminar compra
+$("#terminarCompra").on("mouseenter", function(){
+
+    $("#terminarCompra").css("color","white").css("background","black")
+})
+$("#terminarCompra").on("mouseleave", function(){
+
+    $("#terminarCompra").css("color","green").css("background","#2C272E")
+})
 
