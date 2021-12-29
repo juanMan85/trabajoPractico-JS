@@ -185,3 +185,59 @@ $("#terminarCompra").on("mouseleave", function(){
     $("#terminarCompra").css("color","green").css("background","#2C272E")
 })
 
+
+
+
+
+//-----coordenadas para clima
+
+let ubicacion = navigator.geolocation.getCurrentPosition( mostrarUbicacion)
+let latitud=0;
+let longitud=0;
+function mostrarUbicacion(posicion){
+    latitud = posicion.coords.latitude
+    longitud = posicion.coords.longitude
+    console.log(latitud)
+    console.log(longitud)
+     
+    //------guardando coordenadas en memoria
+
+    localStorage.setItem("claveLatitud",latitud)  
+    localStorage.setItem("claveLongitud",longitud) 
+}
+
+
+let latitudJson=JSON.parse(localStorage.getItem("claveLatitud")) //recupero coordenadas de memoria
+let longitudJson=JSON.parse(localStorage.getItem("claveLongitud"))
+
+
+
+
+let clima = "http://api.openweathermap.org/data/2.5/weather?lat="+latitudJson+"&lon="+longitudJson+"&appid=237739cc475750227cf2a27a46b9fa6d";
+ 
+
+
+$("#clima").on("click", function(){
+
+    $.get(clima, function(data){
+
+       console.log(data)
+       let maxCelcius=(data.main.temp_max)-273.15  //formula de conversion => celcius = kelvin - 273.15
+       let minCelcius=(data.main.temp_min)-273.15
+       let sensacion = (data.main.feels_like)-273.15
+       
+       
+        
+       $(".body").prepend( `<div>
+                        <h3>${data.name}</h3>
+                        <p>Temperatura Max: ${parseInt(maxCelcius)}</p> 
+                        <p>Temperatura Min: ${parseInt(minCelcius)}</p>
+                        <p>Sensacion: ${parseInt(sensacion)}</p>
+        
+                        </div>`)
+        
+
+    })
+})
+
+
