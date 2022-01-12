@@ -82,7 +82,7 @@ function agregarCarrito(e) {
           
     
 
-    nombreProducto = padre.querySelector(".h5"); //trae el contenido textual del titulo de la carta
+    nombreProducto = padre.querySelector(".card-title"); //trae el contenido textual del titulo de la carta
     console.log("titulo: "+nombreProducto.textContent); 
     let precio = padre.querySelector(".precio"); 
   
@@ -126,15 +126,13 @@ function terminarCompra(){
     let precioFinal=0;
     
 
-    let tituloTicket=document.createElement("h2")
-    tituloTicket.innerHTML ="Su Ticket :";
-    mensaje.appendChild(tituloTicket); 
+   
 
-
+    $("#mensaje").prepend(`<h3>Su ticket</h3>`)
     
 
     for (let prodCarrito of carritoFinal) {        
-        console.log("nombre: "+prodCarrito.prod)
+        console.log(prodCarrito.prod)
         console.log("cantidad: "+prodCarrito.cant)
         console.log("precio: "+prodCarrito.valor)
         precioFinal=precioFinal+(prodCarrito.valor*prodCarrito.cant);                  //suma todos los productos del carrito
@@ -142,17 +140,21 @@ function terminarCompra(){
 
 
         //----------JqUERY
-        $("#mensaje").append(`<h3>producto: ${prodCarrito.prod}          
-                                <pan>Cantidad: ${prodCarrito.cant}
-                                <span>precio: ${prodCarrito.valor}`)
+       
+       
+        $("#mensaje").append(`<div class="row">
+        <div class="col-4">${prodCarrito.prod}</div>
+        <div class="col-4">${prodCarrito.cant}</div>
+        <div class="col-4">${prodCarrito.valor}</div>
+      </div>`)
         //-----------------------------------------------------------
     }
 
     console.log("el precio final: "+precioFinal)
 
   
-    let parrafo=document.createElement("h4")                        //crea nodo suelto
-    parrafo.innerHTML = "el precio final es: "+precioFinal ;        //propiedad de nodo innerHTML 
+    let parrafo=document.createElement("p")                        //crea nodo suelto
+    parrafo.innerHTML = "El precio final es: "+precioFinal ;        //propiedad de nodo innerHTML 
     mensaje.appendChild(parrafo)                                   //engancha el nodo suelto <p> al <div> con id: "mensaje" ----muestra al usuario en pantalla
 
    
@@ -169,10 +171,10 @@ $(".botonAlCarrito").on("click", function(e){
 
 //-------------------animaciones jquery---------------------
 
-$(".titulo").on("mousemove", function(){
+// $(".titulo").on("mousemove", function(){
 
-    $(".titulo").slideUp(5000).delay(1000).slideDown(3000)
-})
+//     $(".titulo").slideUp(5000).delay(1000).slideDown(3000)
+// })
 
 
 //-------------hover boton terminar compra
@@ -184,6 +186,7 @@ $("#terminarCompra").on("mouseleave", function(){
 
     $("#terminarCompra").css("color","green").css("background","#2C272E")
 })
+
 
 
 
@@ -228,7 +231,7 @@ $("#clima").on("click", function(){
        
        
         
-       $(".body").prepend( `<div>
+       $("#verClima").prepend( `<div>
                         <h3>${data.name}</h3>
                         <p>Temperatura Max: ${parseInt(maxCelcius)}</p> 
                         <p>Temperatura Min: ${parseInt(minCelcius)}</p>
