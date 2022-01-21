@@ -5,34 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo2.css">
+    <link rel="stylesheet" href="css/darkMode.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Corinthia&display=swap" rel="stylesheet">  
-
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia&display=swap" rel="stylesheet">  
     <title>proyectoJavaScript</title>
-    
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
 </head>
+
 <body class="body">
     <header class="header">
+        <a href="#"><img src="/iconos/store.png" alt=""></a>
         <h1 class="titulo">Almacen de barrio</h1>
     </header>
+    <div id="clima">
+        
+    </div>
+    
     <main class="main">
-        <button id="clima">ver clima</button>
-<!-- ---------------------------------------------------- -->
-                <div class="gondola">
-                  <div class="gondola-arriba">
+                        
                       <div class="producto">
                           <img src="imagenesAlmacen/harina.png" class="img" alt="...">
                           <h5 class="h5">Harina</h5>
                           <p class="p">$ <span class="precio">80</span> </p>
-                          <input class="datoInput" placeholder="cantidad" style="width: 5rem;">
+                          <input class="datoInput" placeholder="cantidad" style="width: 5rem;"> 
+                    
                           <button class="botonAlCarrito">al Carrito</button>
                       </div>
-                            <!-- --------------- -->
+                          
                       <div class="producto">
                           <img src="imagenesAlmacen/leche.png" class="img" alt="...">
                           <h5 class="h5">Leche</h5>
@@ -40,7 +40,7 @@
                           <input class="datoInput" placeholder="cantidad" style="width: 5rem;">
                           <button class="botonAlCarrito">al Carrito</button>
                       </div>
-                              <!-- --------------- -->
+                             
                       <div class="producto">
                           <img src="imagenesAlmacen/mantequillaDeMani.png" class="img" alt="...">
                           <h5 class="h5">Mantequilla</h5>
@@ -48,78 +48,89 @@
                           <input class="datoInput" placeholder="cantidad" style="width: 5rem;">
                           <button class="botonAlCarrito">al Carrito</button>
                       </div>
-                             <!-- --------------- -->
-                  </div>
-                  <div class="gondola-medio">
-                    <div class="producto">
-                        <img src="imagenesAlmacen/galletitas.png" class="img" alt="...">
-                        <h5 class="h5">galletitas</h5>
-                        <p class="p">$ <span class="precio">130</span> </p>
-                        <input class="datoInput" placeholder="cantidad" style="width: 5rem;">
-                        <button class="botonAlCarrito">al Carrito</button>
-                    </div>
-                          <!-- --------------- -->
-                    <div class="producto">
-                        <img src="imagenesAlmacen/cafe.png" class="img" alt="...">
-                        <h5 class="h5">cafe</h5>
-                        <p class="p">$ <span class="precio">115</span> </p>
-                        <input class="datoInput" placeholder="cantidad" style="width: 5rem;">
-                        <button class="botonAlCarrito">al Carrito</button>
-                    </div>
-                            <!-- --------------- -->
-                    <div class="producto">
-                        <img src="imagenesAlmacen/mermelada.png" class="img" alt="...">
-                        <h5 class="h5">Mermelada</h5>
-                        <p class="p">$ <span class="precio">105</span> </p>
-                        <input class="datoInput" placeholder="cantidad" style="width: 5rem;">
-                        <button class="botonAlCarrito">al Carrito</button>
-                    </div>
-                           <!-- --------------- -->
-                </div>
-                <div class="gondola-abajo">
-                  <div class="producto">
-                      <img src="imagenesAlmacen/manteca.png" class="img" alt="...">
-                      <h5 class="h5">manteca</h5>
-                      <p class="p">$ <span class="precio">95</span> </p>
-                      <input class="datoInput" placeholder="cantidad" style="width: 5rem;">
-                      <button class="botonAlCarrito">al Carrito</button>
-                      
-                  </div>
-                        <!-- --------------- -->
-                  <div class="producto">
-                      <img src="imagenesAlmacen/aceite.png" class="img" alt="...">
-                      <h5 class="h5">Aceite</h5>
-                      <p class="p">$ <span class="precio">240</span> </p>
-                      <input class="datoInput" placeholder="cantidad" style="width: 5rem;">
-                      <button class="botonAlCarrito">al Carrito</button>
-                      
+                             
+                 
+                
+                        <div class="producto">
+                            <img src="imagenesAlmacen/galletitas.png" class="img" alt="...">
+                            <h5 class="h5">galletitas</h5>
+                            <p class="p">$ <span class="precio">130</span> </p>
+                            <input class="datoInput" placeholder="cantidad" style="width: 5rem;">
+                            <button class="botonAlCarrito">al Carrito</button>
+                        </div>
+                          
+                        <div class="producto">
+                            <img src="imagenesAlmacen/cafe.png" class="img" alt="...">
+                            <h5 class="h5">cafe</h5>
+                            <p class="p">$ <span class="precio">115</span> </p>
+                            <input class="datoInput" placeholder="cantidad" style="width: 5rem;">
+                            <button class="botonAlCarrito">al Carrito</button>
+                        </div>
+                           
+                        <div class="producto">
+                            <img src="imagenesAlmacen/mermelada.png" class="img" alt="...">
+                            <h5 class="h5">Mermelada</h5>
+                            <p class="p">$ <span class="precio">105</span> </p>
+                            <input class="datoInput" placeholder="cantidad" style="width: 5rem;">
+                            <button class="botonAlCarrito">al Carrito</button>
+                        </div>
+                          
+               
+               
+                        <div class="producto">
+                            <img src="imagenesAlmacen/manteca.png" class="img" alt="...">
+                            <h5 class="h5">manteca</h5>
+                            <p class="p">$ <span class="precio">95</span> </p>
+                            <input class="datoInput" placeholder="cantidad" style="width: 5rem;">
+                            <button class="botonAlCarrito">al Carrito</button>
+                            
+                        </div>
+                            
+                        <div class="producto">
+                            <img src="imagenesAlmacen/aceite.png" class="img" alt="...">
+                            <h5 class="h5">Aceite</h5>
+                            <p class="p">$ <span class="precio">240</span> </p>
+                            <input class="datoInput" placeholder="cantidad" style="width: 5rem;">
+                            <button class="botonAlCarrito">al Carrito</button>
+                            
 
-                  </div>
-                          <!-- --------------- -->
-                  <div class="producto">
-                      <img src="imagenesAlmacen/miel.png" class="img" alt="...">
-                      <h5 class="h5">Mantequilla</h5>
-                      <p class="p">$ <span class="precio">350</span> </p>
-                      <input class="datoInput" placeholder="cantidad" style="width: 5rem;">
-                      <button class="botonAlCarrito">al Carrito</button>
-                      
-                  </div>
-                         <!-- --------------- -->
-              </div>
-              </div>
+                        </div>
+                          
+                        <div class="producto">
+                            <img src="imagenesAlmacen/miel.png" class="img" alt="...">
+                            <h5 class="h5">Mantequilla</h5>
+                            <p class="p">$ <span class="precio">350</span> </p>
+                            <input class="datoInput" placeholder="cantidad" style="width: 5rem;">
+                            <button class="botonAlCarrito">al Carrito</button>
+                            
+                        </div>
 
-<!-- ---------------------------------------------------- -->
     </main>
-    
 
-<!-- ---------------------------------------------------- -->
-
-    <div  class="btn " role="group" aria-label="Basic example"> 
-      <button id="terminarCompra" class="btn">terminar compra</button>
-    </div>
-    <div id="mensaje"></div>       
+    <div class="areaTicket">
+          <div  class="btn " role="group" aria-label="Basic example"> 
+             <button id="terminarCompra" class="btn">terminar compra</button>
+          </div>
+          <div id="mensaje"></div>  
+          
+    </div>    
   
-    
+    <footer class="footer">    
+
+        <div class="foot-izq">
+            <p><a href="#">nosotros</a></p>
+            <p><a href="#">productos</a></p>
+            <p><a href="#">contacto</a></p>
+        </div>     
+        <div class="foot-der">
+            <p>siguenos en</p>
+            <a href="#"><img src="iconos/facebook.png" alt="facebook"></a>
+            <a href="#"><img src="iconos/twitter.png" alt="twitter"></a>
+        </div>  
+       
+    </footer>  
+   
+     
     <script src="scripts/jQuery.js"></script>
 </body>
 </html>

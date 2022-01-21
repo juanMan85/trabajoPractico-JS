@@ -1,0 +1,25 @@
+
+
+    .darkMode{
+        background-color: orange;
+        box-shadow: 1px 1px 4px black inset;
+        height: 30px;
+        width: 80px;
+        border-radius: 20px;
+        position: relative;
+        margin: auto;
+        padding: auto;
+    }
+
+    #dark{
+        position:absolute;
+        top: -10px;
+        left: -10px;
+        background-color: rgb(177, 98, 33);
+        padding: 0;
+        height: 100%;
+        border-radius: 20px;
+        width: 30px;  
+        box-shadow: 1px 1px 4px orange inset;
+        box-shadow: 4px 4px 7px black  inset;
+    }

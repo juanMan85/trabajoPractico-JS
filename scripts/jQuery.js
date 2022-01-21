@@ -53,7 +53,7 @@ let carritoDeCompra=[];
 for(let boton of botonAlCarrito){
 
       boton.addEventListener("click", agregarCarrito)
-     
+ 
 }
 
 
@@ -78,7 +78,9 @@ function agregarCarrito(e) {
     console.log(e.target)                              //me dice donde sucedio el evento click
     let hijo = e.target;                                //dato donde sucedio el evento lo almaceno en la variable hijo
     let padre = hijo.parentNode; 
-    let cantidadAgregada = e.target;     
+    let cantidadAgregada = e.target;  
+   
+    
           
     
 
@@ -87,7 +89,7 @@ function agregarCarrito(e) {
     let precio = padre.querySelector(".precio"); 
   
     cantidad = cantidadAgregada.parentNode.querySelector(".datoInput");
-   
+
     console.log("cantidad: "+cantidad.value);  
     console.log("precio: "+precio.textContent);
 
@@ -111,9 +113,26 @@ function agregarCarrito(e) {
 
 
 
+var señal=0 
+     
+$("#terminarCompra").on("click", function(){
 
- $("#terminarCompra").on("click", terminarCompra)              // jQuery
+        if(señal===0){
+            terminarCompra();
+            señal=1
+        }
+        else if(señal===1){
+            limpiarPantalla();
+            señal=0;
+        } 
+        else{"error"}       
+})  
 
+function limpiarPantalla(){
+    $("#mensaje h2").remove()
+    $("#mensaje div").remove()
+    $("#mensaje h4").remove()
+}
 
 
 //----------funcion terinar compra-----------
@@ -140,11 +159,11 @@ function terminarCompra(){
         precioFinal=precioFinal+(prodCarrito.valor*prodCarrito.cant);                  //suma todos los productos del carrito
 
 
-
+        
         //----------JqUERY
-        $("#mensaje").append(`<h3>producto: ${prodCarrito.prod}          
-                                <pan>Cantidad: ${prodCarrito.cant}
-                                <span>precio: ${prodCarrito.valor}`)
+        $("#mensaje").append(  `<div>${prodCarrito.prod}          
+                                <span>ud. / uds. ${prodCarrito.cant}</span>
+                                <span>$${prodCarrito.valor}</span></div>`)
         //-----------------------------------------------------------
     }
 
@@ -169,10 +188,10 @@ $(".botonAlCarrito").on("click", function(e){
 
 //-------------------animaciones jquery---------------------
 
-$(".titulo").on("mousemove", function(){
+// $(".titulo").on("mousemove", function(){
 
-    $(".titulo").slideUp(5000).delay(1000).slideDown(3000)
-})
+//     $(".titulo").slideUp(5000).delay(1000).slideDown(3000)
+// })
 
 
 //-------------hover boton terminar compra
@@ -184,8 +203,6 @@ $("#terminarCompra").on("mouseleave", function(){
 
     $("#terminarCompra").css("color","green").css("background","#2C272E")
 })
-
-
 
 
 
@@ -211,13 +228,11 @@ let latitudJson=JSON.parse(localStorage.getItem("claveLatitud")) //recupero coor
 let longitudJson=JSON.parse(localStorage.getItem("claveLongitud"))
 
 
-
-
 let clima = "http://api.openweathermap.org/data/2.5/weather?lat="+latitudJson+"&lon="+longitudJson+"&appid=237739cc475750227cf2a27a46b9fa6d";
  
 
 
-$("#clima").on("click", function(){
+    $(window).on("load", function(){
 
     $.get(clima, function(data){
 
@@ -228,16 +243,14 @@ $("#clima").on("click", function(){
        
        
         
-       $(".body").prepend( `<div>
-                        <h3>${data.name}</h3>
-                        <p>Temperatura Max: ${parseInt(maxCelcius)}</p> 
-                        <p>Temperatura Min: ${parseInt(minCelcius)}</p>
-                        <p>Sensacion: ${parseInt(sensacion)}</p>
-        
-                        </div>`)
-        
-
+       $("#clima").prepend( `<div>
+                               <h3>${data.name}</h3>
+                               <div>
+                                 <p>Max: ${parseInt(maxCelcius)}</p> 
+                                 <p>Min: ${parseInt(minCelcius)}</p>
+                                 <p>Sensacion: ${parseInt(sensacion)}</p>
+                               </div>
+                              </div>`)   
     })
 })
-
 

@@ -5,108 +5,145 @@
 }
 
 .body{
-    background:#24A19C;
+   display: grid;
+   background-color: black;
+   grid-template-columns: 20% 20% 20% 20% 20%;
+   grid-template-rows:    20vh 60vh  20vh;
+   grid-template-areas: "header header header header   clima"
+                        "prod   prod   prod   terminar terminar"
+                        "foot   foot   foot   foot     foot";
+   
 }
     .header{
-        background: #FFC996;
+        grid-area: header;  
+        background: orange;
         display: flex;
         justify-content: center;
-        box-shadow:3px 3px 5px black;
+        box-shadow:1px 1px 10px black inset;
+        align-items: center;
+ 
     }
-        .titulo{
-            font-size: 75px;
-            font-family: 'Corinthia', cursive;
-            font-style: italic;
-            color: #583D72;
-            font-weight: bolder;
-        }
+            .titulo{
+                font-size: 80px;
+                font-family: 'Corinthia', cursive;
+                font-style: italic;
+                color: black;
+                font-weight: bolder;
+            }
+    
+            #clima{
+                grid-area: clima;
+                background-color: black;    
+                padding: 0;
+                margin: 0;
+                border-radius: 6px;
+            }
+            #clima div{
+                color: orange;
+                font-size: 12px;
+                
+            }
+            #clima div h3{
+                text-align: center;
+                margin-top: 30px;
+            }
+            #clima div div{
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: nowrap;
+            
+            } 
+            
+      
     .main{
-        background: #583D72;
-        box-shadow:3px 3px 5px black;
+        grid-area: prod;
+        background: black;
+        box-shadow:1px 1px 10px black;
+        overflow: hidden;
+        overflow-y: scroll;
+        color: aliceblue;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow:1px 1px 10px orange inset;
+        display: flex;
+        flex-wrap: wrap;
+    
     }
-        .gondola{
-            background:#FF8474;
-        }
-            .gondola-arriba{
-                background: #FFC996;
+            .producto img{
+                max-height: 200px;
+                width: auto;    
+                border-radius: 20px;  
+                
+            }
+    
+   
+            .areaTicket{
+                grid-area: terminar;
+                background-color: black;
+                box-shadow:1px 1px 10px orange inset;
+                color: aliceblue;
+                overflow: hidden;
+                overflow-y: scroll;
+            }
+  
+            #mensaje h2{
+                text-align: center;   
+            }
+            #mensaje div{
                 display: flex;
                 justify-content: space-around;
+                align-items: baseline;
+                
             }
-            .gondola-medio{
-                background: #FFC996;
-                display: flex;
-                justify-content: space-around;
+    .footer{
+        grid-area:foot ;
+        display: flex;
+        justify-content: space-around;
+        height: 100%;
+        background-color: rgb(255, 166, 0);
+        box-shadow:1px 1px 10px black inset;
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+    
+            .foot-izq p a{
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+            
             }
-            .gondola-abajo{
-                background:#FFC996;
-                display: flex;
-                justify-content: space-around;
+            .foot-der p{
+                color: black;
+                font-weight: bold;
             }
-                .producto{
-                    background: #c9cccc79;
-                    width: 25%;
-                    border-radius: 10px;
-                    box-shadow: 3px 3px 5px black;
+  
+ 
 
-                    display: flex;
-                    flex-flow: column nowrap;
-                    
-                    
-                }
-                .producto:hover{
-                    box-shadow: none;
-                    border-left: 3px black solid;
-                    border-top:3px black solid;
-                }
-                   
-                    .img{
-                    
-                        border-radius: 20px;          
-                    }
-                    .h5{
-                        font-size: large;
-                        color: black;
-                    }
-                    .p{
-                        font-size: 20px;
-                        color: black;
-                    }
-                    .botonAlCarrito{
-                        width: 70%;
-                        background: #c5cecd27;
-                        box-shadow: 4px 4px 5px #22577E;
-                    }
-                    .botonAlCarrito:hover{
-                        border-top: #22577E solid;
-                        border-left: #22577E solid;
-                    }
-        .btn{
-            background: #583D72;
-            display: flex;
-            justify-content: center;
-            box-shadow: 3px 3px 5px black;
-        }
-        .btn:hover{
-            box-shadow: 1px 1px 3px black;
+
+
+
+
+@media all and (max-width: 1050px){
+
+        .body{
+            grid-template-columns: 80vw;
+            grid-template-rows:    15vh 10vh 50vh 40vh 15vh;
+            grid-template-areas: "header"
+                                "clima"
+                                "prod"
+                                "terminar"
+                                "foot";
             
         }
-h5{
-    color: #F6F2D4;
-    font-size: medium;
-}
-h2{
-    color: #95D1CC;
-}
-h4{
-    color: rgb(151, 30, 30);
-    font-size: 30PX;
+        .titulo{
+            font-size: 60px;
     
+        }
+        #clima div{
+            display: flex;
+            justify-content: space-around;
+            
+        }
+
 }
 
-#mensaje{
-    display: flex;
-    flex-direction: column;
-    border: solid #22577E;
-    background-color: aliceblue;
-    box-shadow: 3px 3px 5px black;
-}
