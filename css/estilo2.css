@@ -1,9 +1,10 @@
 *{
-    margin: 10px;
-    padding: 10px;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 .body{
    display: grid;
    background-color: black;
@@ -147,3 +148,75 @@
 
 }
 
+=======
+.titulo{
+    font-size: 75px;
+    font-family: 'Corinthia', cursive;
+    font-style: italic;
+    color: #583D72;
+    font-weight: bolder;
+}
+   
+.card-title{
+    font-size: 12px;
+    
+}  
+
+#verClima{
+    background-color: black;
+    color: lawngreen;
+    text-align: center;
+    border-radius: 7px;
+    box-shadow: 2px 2px 4px #1a374d;
+}
+    #verClima h3{
+         color: darkorange;
+         font-size:larger;
+
+    }
+    #verClima p{
+         font-size: small;  
+    }
+
+
+
+#mensaje{
+    background-color: #B1D0E0; 
+    text-align: center;
+    border-radius: 7px;
+    box-shadow: 1px 0px 10px #1a374d;
+}
+    #mensaje h3{
+        color:#1A374D ;
+        font-size: large;
+        text-align: center;
+        padding-top: 5px;
+    }
+    #mensaje div{
+        display: flex;
+        justify-content: space-around;
+    }
+    #mensaje div h4{
+        color:#1A374D ;
+        font-size: medium;
+        
+    }
+    #mensaje div span{
+        color:#1A374D ;
+        font-size:medium;  
+      
+            
+    }
+    #mensaje p{
+        color:#082032 ;
+        font-size:large; 
+        font-weight: bolder;  
+        justify-content: center; 
+    }
+
+    .card:hover{
+        background:#B1D0E0;
+        color: #FF5151;
+        box-shadow: 1px 1px 15px #1a374d;
+    } 
+>>>>>>> 280d9b411c9427ca18d076cabf0f5b76f82dc038

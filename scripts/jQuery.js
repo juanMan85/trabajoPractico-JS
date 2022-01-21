@@ -84,7 +84,7 @@ function agregarCarrito(e) {
           
     
 
-    nombreProducto = padre.querySelector(".h5"); //trae el contenido textual del titulo de la carta
+    nombreProducto = padre.querySelector(".card-title"); //trae el contenido textual del titulo de la carta
     console.log("titulo: "+nombreProducto.textContent); 
     let precio = padre.querySelector(".precio"); 
   
@@ -145,15 +145,13 @@ function terminarCompra(){
     let precioFinal=0;
     
 
-    let tituloTicket=document.createElement("h2")
-    tituloTicket.innerHTML ="Su Ticket :";
-    mensaje.appendChild(tituloTicket); 
+   
 
-
+    $("#mensaje").prepend(`<h3>Su ticket</h3>`)
     
 
     for (let prodCarrito of carritoFinal) {        
-        console.log("nombre: "+prodCarrito.prod)
+        console.log(prodCarrito.prod)
         console.log("cantidad: "+prodCarrito.cant)
         console.log("precio: "+prodCarrito.valor)
         precioFinal=precioFinal+(prodCarrito.valor*prodCarrito.cant);                  //suma todos los productos del carrito
@@ -161,17 +159,27 @@ function terminarCompra(){
 
         
         //----------JqUERY
+<<<<<<< HEAD
         $("#mensaje").append(  `<div>${prodCarrito.prod}          
                                 <span>ud. / uds. ${prodCarrito.cant}</span>
                                 <span>$${prodCarrito.valor}</span></div>`)
+=======
+       
+       
+        $("#mensaje").append(`<div class="row">
+        <div class="col-4">${prodCarrito.prod}</div>
+        <div class="col-4">${prodCarrito.cant}</div>
+        <div class="col-4">${prodCarrito.valor}</div>
+      </div>`)
+>>>>>>> 280d9b411c9427ca18d076cabf0f5b76f82dc038
         //-----------------------------------------------------------
     }
 
     console.log("el precio final: "+precioFinal)
 
   
-    let parrafo=document.createElement("h4")                        //crea nodo suelto
-    parrafo.innerHTML = "el precio final es: "+precioFinal ;        //propiedad de nodo innerHTML 
+    let parrafo=document.createElement("p")                        //crea nodo suelto
+    parrafo.innerHTML = "El precio final es: "+precioFinal ;        //propiedad de nodo innerHTML 
     mensaje.appendChild(parrafo)                                   //engancha el nodo suelto <p> al <div> con id: "mensaje" ----muestra al usuario en pantalla
 
    
@@ -206,6 +214,12 @@ $("#terminarCompra").on("mouseleave", function(){
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 280d9b411c9427ca18d076cabf0f5b76f82dc038
 //-----coordenadas para clima
 
 let ubicacion = navigator.geolocation.getCurrentPosition( mostrarUbicacion)
@@ -243,6 +257,7 @@ let clima = "http://api.openweathermap.org/data/2.5/weather?lat="+latitudJson+"&
        
        
         
+<<<<<<< HEAD
        $("#clima").prepend( `<div>
                                <h3>${data.name}</h3>
                                <div>
@@ -251,6 +266,17 @@ let clima = "http://api.openweathermap.org/data/2.5/weather?lat="+latitudJson+"&
                                  <p>Sensacion: ${parseInt(sensacion)}</p>
                                </div>
                               </div>`)   
+=======
+       $("#verClima").prepend( `<div>
+                        <h3>${data.name}</h3>
+                        <p>Temperatura Max: ${parseInt(maxCelcius)}</p> 
+                        <p>Temperatura Min: ${parseInt(minCelcius)}</p>
+                        <p>Sensacion: ${parseInt(sensacion)}</p>
+        
+                        </div>`)
+        
+
+>>>>>>> 280d9b411c9427ca18d076cabf0f5b76f82dc038
     })
 })
 
